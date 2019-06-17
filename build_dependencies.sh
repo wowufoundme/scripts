@@ -10,18 +10,31 @@
 #
 # Developed by Shubhkirti Sharma
 
+# Set color variables
+CYAN='\033[0;36m'
+NC='\033[0m' 
+ 
+# Create temp working directory
+printf "${CYAN} -----------------------------------\n    Creating temporary working directory \n ----------------------------------- ${NC}\n"
+mkdir -p ~/tmp
+cd ~/tmp
+
 # Update the Linux environment
+printf "${CYAN} -----------------------------------\n    Updating Linux Env \n ----------------------------------- ${NC}\n"
 sudo apt-get update -y
 
 # Install the abd and fastboot tools
+printf "${CYAN} -----------------------------------\n    Installing ADB and Fastboot \n ----------------------------------- ${NC}\n"
 sudo apt-get install adb -y
 sudo apt-get install fastboot -y
 
 # Remove the previous OpenJDK versions and install OpenJDK-8
+printf "${CYAN} -----------------------------------\n    Installing OpenJDK 8 \n ----------------------------------- ${NC}\n"
 # sudo apt-get remove openjdk*
 # sudo apt-get install openjdk-8-jdk openjdk-8-jre -y
 
 # Install required dependency packages
+printf "${CYAN} -----------------------------------\n    Installing Linux Dependency Packages \n ----------------------------------- ${NC}\n"
 sudo apt-get install build-essentail -y
 sudo apt-get install git -y
 sudo apt-get install git-core -y
@@ -32,8 +45,8 @@ sudo apt-get install flex -y
 sudo apt-get install bison -y
 sudo apt-get install gperf -y
 sudo apt-get install libsdl1.2-dev -y
-sudo apt-get install libesd0-dev -y
-sudo apt-get install libwxgtk2.8-dev -y
+# sudo apt-get install libesd0-dev -y
+# sudo apt-get install libwxgtk2.8-dev -y
 sudo apt-get install squashfs-tools -y
 sudo apt-get install libncurses5-dev -y
 sudo apt-get install zlib1g-dev -y
@@ -48,7 +61,7 @@ sudo apt-get install schedtool -y
 sudo apt-get install g++-multilib -y
 sudo apt-get install lib32z1-dev -y
 sudo apt-get install lib32ncurses5-dev -y
-sudo apt-get install lib32readline-gplv2-dev -y
+# sudo apt-get install lib32readline-gplv2-dev -y
 sudo apt-get install gcc-multilib -y
 sudo apt-get install maven -y
 sudo apt-get install tmux -y
@@ -57,10 +70,14 @@ sudo apt-get install w3m -y
 sudo apt-get install ncftp -y
 
 # Intialize repo tool in ~/bin directory
-wget https://raw.githubusercontent.com/wowufoundme/blobs/master/initrepo.sh && sudo chmod a+x ./initrepo.sh && . initrepo.sh
+printf "${CYAN} -----------------------------------\n    Setting up and Intializing Repo Tool \n ----------------------------------- ${NC}\n"
+wget https://raw.githubusercontent.com/wowufoundme/scripts/master/initrepo.sh -O ~/tmp/initrepo.sh
+sudo chmod a+x ~/tmp/initrepo.sh
+. ~/tmp/initrepo.sh
 
-CYAN='\033[0;36m'
-NC='\033[0m' 
-printf "\n\n---------------------------------------------------\n"
+printf "\n${CYAN} -----------------------------------\n    Cleaning \n ----------------------------------- ${NC}\n"
+sleep 2
+sudo rm -rf ~/tmp
+
 printf "${CYAN} SCRIPT COMPLETE! BUILD ENVIRONMENT READY ${NC}\n"
 printf "${CYAN} Start building your ROM by running repo init and sync ${NC}\n"

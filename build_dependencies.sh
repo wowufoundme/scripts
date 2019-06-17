@@ -6,7 +6,7 @@
 # things ready.
 #
 # To directly run this script, run the below command:
-# wget https://raw.githubusercontent.com/wowufoundme/blobs/master/build_dependencies.sh && sudo chmod a+x ./build_dependencies.sh && sudo ./build_dependencies.sh
+# wget https://raw.githubusercontent.com/wowufoundme/scripts/master/build_dependencies.sh && sudo chmod a+x ./build_dependencies.sh && sudo ./build_dependencies.sh
 #
 # Developed by Shubhkirti Sharma
 

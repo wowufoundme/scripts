@@ -9,3 +9,7 @@
 `sudo chmod a+x <script_name>.sh`
 4. Run the script  
 `. <script_name>.sh`
+
+## Issues & Contributing
+
+If you find an issue, please open one. Open to improvements if any.

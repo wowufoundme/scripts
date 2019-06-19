@@ -1,6 +1,6 @@
 #! /bin/bash
-# A small script to run at the start of Ubuntu to initialize the
-# environment.
+# A small script to run at the start of a new Ubuntu installation to initialize the
+# environment and set up important packages
 
 # Set color variables
 CYAN='\033[0;36m'
@@ -25,6 +25,17 @@ if [ "$INP" = "Y" ] || [ "$INP" = "y" ]
 then
     printf "${CYAN}-----------------------------------\nInstalling build-essentials \n----------------------------------- ${NC}\n"
     sudo apt-get install build-essential -y
+else
+    echo "Skipping..."
+fi
+
+# Install ubuntu-restricted-extras
+printf "\n"
+read -p "Do you want to install essential media codecs and libraries? (Y/N)" INP
+if [ "$INP" = "Y" ] || [ "$INP" = "y" ]
+then
+    printf "${CYAN}-----------------------------------\nInstalling ubuntu-restricted-extras \n----------------------------------- ${NC}\n"
+    sudo apt-get install ubuntu-restricted-extras -y
 else
     echo "Skipping..."
 fi

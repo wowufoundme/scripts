@@ -45,8 +45,23 @@ printf "\n"
 read -p "Do you want to upgrade software packages?(Y/N)" INP
 if [ "$INP" = "Y" ] || [ "$INP" = "y" ]
 then
-    printf "${CYAN}-----------------------------------\nUpdating environment \n----------------------------------- ${NC}\n"
+    printf "${CYAN}-----------------------------------\Upgrading Installed Packages \n----------------------------------- ${NC}\n"
     sudo apt-get upgrade -y
+    sudo apt-get autoremove
+else
+    echo "Skipping..."
+fi
+
+# Install GNOME Tweak Tool
+printf "\n"
+read -p "Do you want to install GNOME Tweak Tool & Shell Extensions?(Y/N)" INP
+if [ "$INP" = "Y" ] || [ "$INP" = "y" ]
+then
+    printf "${CYAN}-----------------------------------\nInstalling GNOME Tweak Tool \n----------------------------------- ${NC}\n"
+    sudo add-apt-repository ppa:webupd8team/gnome3 -y
+    sudo apt-get update -y
+    sudo apt-get install gnome-tweak-tool -y
+    sudo apt-get install gnome-shell-extensions -y
 else
     echo "Skipping..."
 fi

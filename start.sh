@@ -6,6 +6,8 @@
 CYAN='\033[0;36m'
 NC='\033[0m' 
 
+sudo apt-get -qq install gdebi-core
+
 # Updating Environment
 printf "\n"
 read -p "Do you want to update the environment?(Y/N)" INP
@@ -16,7 +18,6 @@ then
 else
     echo "Skipping..."
 fi
-
 
 # Install build-essential
 printf "\n"
@@ -52,6 +53,12 @@ else
     echo "Skipping..."
 fi
 
+#
+#
+#   Install Essential Softwares
+#
+#
+
 # Install GNOME Tweak Tool
 printf "\n"
 read -p "Do you want to install GNOME Tweak Tool & Shell Extensions?(Y/N)" INP
@@ -62,6 +69,43 @@ then
     sudo apt-get update -y
     sudo apt-get install gnome-tweak-tool -y
     sudo apt-get install gnome-shell-extensions -y
+else
+    echo "Skipping..."
+fi
+
+# Installing synaptic package manager
+printf "\n"
+read -p "Do you want to install Synaptic Package Manager?(Y/N)" INP
+if [ "$INP" = "Y" ] || [ "$INP" = "y" ]
+then
+    printf "${CYAN}-----------------------------------\nInstalling Synaptic Package Manager \n----------------------------------- ${NC}\n"
+    sudo apt-get install synaptic -y
+else
+    echo "Skipping..."
+fi
+
+# Installing google chrome
+printf "\n"
+read -p "Do you want to install Google Chrome Stable?(Y/N)" INP
+if [ "$INP" = "Y" ] || [ "$INP" = "y" ]
+then
+    printf "${CYAN}-----------------------------------\nInstalling Google Chrome Stable \n----------------------------------- ${NC}\n"
+    mkdir ~/tmp
+    printf "${CYAN}-----------------------------------\nGetting Google Chrome Stable \n----------------------------------- ${NC}\n"
+    wget -O ~/tmp/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb 
+    sudo gdebi ~/tmp/chrome.deb -y
+    rm -r ~/tmp/
+else
+    echo "Skipping..."
+fi
+
+# Installing VLC Media Player
+printf "\n"
+read -p "Do you want to install VLC Media Player?(Y/N)" INP
+if [ "$INP" = "Y" ] || [ "$INP" = "y" ]
+then
+    printf "${CYAN}-----------------------------------\nInstalling VLC \n----------------------------------- ${NC}\n"
+    sudo apt-get install vlc -y
 else
     echo "Skipping..."
 fi

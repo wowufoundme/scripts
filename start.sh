@@ -6,7 +6,7 @@
 CYAN='\033[0;36m'
 NC='\033[0m' 
 
-sudo apt-get -qq install gdebi-core
+sudo add-apt-repository -qq "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) universe"
 
 # Updating Environment
 printf "\n"
@@ -18,6 +18,9 @@ then
 else
     echo "Skipping..."
 fi
+
+# Install gdebi core .deb manager --silently
+sudo apt-get -qq install gdebi-core
 
 # Install build-essential
 printf "\n"

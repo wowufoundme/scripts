@@ -30,8 +30,8 @@ sudo apt-get install fastboot -y
 
 # Remove the previous OpenJDK versions and install OpenJDK-8
 printf "${CYAN} -----------------------------------\n    Installing OpenJDK 8 \n ----------------------------------- ${NC}\n"
-# sudo apt-get remove openjdk*
-# sudo apt-get install openjdk-8-jdk openjdk-8-jre -y
+sudo apt-get remove openjdk*
+sudo apt-get install openjdk-8-jdk openjdk-8-jre -y
 
 # Install required dependency packages
 printf "${CYAN} -----------------------------------\n    Installing Linux Dependency Packages \n ----------------------------------- ${NC}\n"

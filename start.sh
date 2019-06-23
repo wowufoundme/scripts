@@ -6,7 +6,18 @@
 CYAN='\033[0;36m'
 NC='\033[0m' 
 
-sudo add-apt-repository -qq "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) universe"
+clear
+printf "${CYAN}---------------------------------------------------------------------- ${NC}"
+printf "${CYAN}\n\tUBUNTU Setup Script ${NC}\n"
+printf "${CYAN}\n\tAt www.github.com/wowufoundme/scripts ${NC}\n"
+printf "${CYAN}\n\tMake sure you ran the script as sudo or provide \n\tthe password below when it prompts${NC}\n"
+printf "${CYAN}\n\tPress any key to start the script ${NC}\n"
+printf "${CYAN}---------------------------------------------------------------------- ${NC}\n"
+read -p "" VAR
+
+# Add universal repository
+printf "${CYAN}-----------------------------------\nAdding Misc Repositories \n----------------------------------- ${NC}\n"
+sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) universe"
 
 # Updating Environment
 printf "\n"

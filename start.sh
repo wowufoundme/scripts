@@ -73,6 +73,19 @@ fi
 #
 #
 
+# Install Python and Python 3
+printf "\n"
+read -p "Do you want to install Python environments(2/3)?(Y/N)" INP
+if [ "$INP" = "Y" ] || [ "$INP" = "y" ]
+then
+    printf "${CYAN}-----------------------------------\nInstalling Python 2 \n----------------------------------- ${NC}\n"
+    sudo apt-get install python python-pip -y
+    printf "${CYAN}-----------------------------------\nInstalling Python 3 \n----------------------------------- ${NC}\n"    
+    sudo apt-get install python3 python3-pip -y
+else
+    echo "Skipping..."
+fi
+
 # Install GNOME Tweak Tool
 printf "\n"
 read -p "Do you want to install GNOME Tweak Tool & Shell Extensions?(Y/N)" INP

@@ -38,6 +38,8 @@ printf "${CYAN} -----------------------------------\n    Installing Linux Depend
 sudo apt-get install build-essentail -y
 sudo apt-get install git -y
 sudo apt-get install git-core -y
+sudo apt-get install python -y
+sudo apt-get install python3 -y
 sudo apt-get install zip -y
 sudo apt-get install curl -y
 sudo apt-get install gnupg -y
@@ -68,6 +70,7 @@ sudo apt-get install tmux -y
 sudo apt-get install screen -y
 sudo apt-get install w3m -y
 sudo apt-get install ncftp -y
+sudo apt-get install imagemagick -y
 
 # Intialize repo tool in ~/bin directory
 printf "${CYAN} -----------------------------------\n    Setting up and Intializing Repo Tool \n ----------------------------------- ${NC}\n"

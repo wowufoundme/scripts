@@ -6,7 +6,7 @@ git clone https://github.com/wowufoundme/pie_device_lenovo_A6020.git -b lineage-
 git clone https://github.com/wowufoundme/android_kernel_lenovo_msm8916.git -b lineage-16.0 kernel/lenovo/msm8916
 
 # Get lenovo vendor patches
-git clone https://github.com/wowufoundme/pie_vendor_lenovo_A6020.git -b lineage-16.0 vendor/lenovo/A6020
+git clone https://github.com/wowufoundme/pie_vendor_lenovo_A6020.git -b lineage-16.0 vendor/lenovo
 
 # Get miscellaneous patches. Skip if already present
 git clone https://github.com/LineageOS/android_external_stlport.git -b lineage-15.1 external/stlport

@@ -6,4 +6,6 @@ repo init -u https://github.com/ResurrectionRemix/platform_manifest.git -b pie
 repo sync -f --force-sync --no-clone-bundle
 
 # Call the dependencies
-. get_dependencies.sh
+wget -O ./dependencies.sh https://raw.githubusercontent.com/wowufoundme/scripts/master/resurrection-remix-pie-A6020/get_dependencies.sh
+chmod +x ./dependencies
+. dependencies.sh

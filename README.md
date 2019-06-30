@@ -1,5 +1,7 @@
 # Build scripts for android env.
 
+Some personal scripts that I use in day to day time.
+
 ### Instructions
 1. Clone the repository  
 `git clone https://github.com/wowufoundme/scripts.git`
